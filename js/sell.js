@@ -2,10 +2,14 @@ let productCost = 0;
 let productCount = 0;
 let comissionPercentage = 0.13;
 let MONEY_SYMBOL = "$";
+let DOLLAR_CURRENCY = "Dólares (USD)";
+let PESO_CURRENCY = "Pesos Uruguayos (UYU)";
+let DOLLAR_SYMBOL = "USD ";
+let PESO_SYMBOL = "UYU ";
 let PERCENTAGE_SYMBOL = '%';
-let URL_PUBLISH_PRODUCT = "https://api.myjson.com/bins/18i9vb";
+let URL_PUBLISH_PRODUCT = "https://api.myjson.com/bins/18iaa9vb";
 let SUCCESS_MSG = "¡Se ha realizado la publicación con éxito! :)";
-let ERROR_MSG = "Ha habido un error:(, verifica qué pasó.";
+let ERROR_MSG = "Ha habido un error :(, verifica qué pasó.";
 
 //Función que se utiliza para actualizar los costos de publicación
 function updateTotalCosts(){
@@ -51,6 +55,19 @@ document.addEventListener("DOMContentLoaded", function(e){
         updateTotalCosts();
     });
 
+    document.getElementById("productCurrency").addEventListener("change", function(){
+        if (this.value == DOLLAR_CURRENCY)
+        {
+            MONEY_SYMBOL = DOLLAR_SYMBOL;
+        } 
+        else if (this.value == PESO_CURRENCY)
+        {
+            MONEY_SYMBOL = PESO_SYMBOL;
+        }
+
+        updateTotalCosts();
+    });
+
     //Se obtiene el formulario de publicación de producto
     var sellForm = document.getElementById("sell-info");
 
@@ -58,19 +75,43 @@ document.addEventListener("DOMContentLoaded", function(e){
     //lanzado por el formulario cuando se seleccione 'Vender'.
     sellForm.addEventListener("submit", function(e){
 
-        var productNameInput = document.getElementById("productName");
+        let productNameInput = document.getElementById("productName");
+        let productCategory = document.getElementById("productCategory");
+        let productCost = document.getElementById("productCostInput");
+        let infoMissing = false;
 
-        //Se realizan los controles necesarios, en este caso
-        //solamente se controla que se haya ingresado el nombre.
-        if (productNameInput.value == "")
+        //Quito las clases que marcan como inválidos
+        productNameInput.classList.remove('is-invalid');
+        productCategory.classList.remove('is-invalid');
+        productCost.classList.remove('is-invalid');
+
+        //Se realizan los controles necesarios,
+        //En este caso se controla que se haya ingresado el nombre y categoría.
+        //Consulto por el nombre del producto
+        if (productNameInput.value === "")
         {
             productNameInput.classList.add('is-invalid');
+            infoMissing = true;
         }
-        else
+        
+        //Consulto por la categoría del producto
+        if (productCategory.value === "")
+        {
+            productCategory.classList.add('is-invalid');
+            infoMissing = true;
+        }
+
+        //Consulto por el costo
+        if (productCost.value <=0)
+        {
+            productCost.classList.add('is-invalid');
+            infoMissing = true;
+        }
+        
+        if(!infoMissing)
         {
             //Aquí ingresa si pasó los controles, irá a enviar
             //la solicitud para crear la publicación.
-            productNameInput.classList.remove('is-invalid');
 
             getJSONData(URL_PUBLISH_PRODUCT).then(function(resultObj){
                 let msgToShowHTML = document.getElementById("resultSpan");
@@ -78,12 +119,12 @@ document.addEventListener("DOMContentLoaded", function(e){
     
                 //Si la publicación fue exitosa, devolverá mensaje de éxito,
                 //de lo contrario, devolverá mensaje de error.
-                if (resultObj.status = 'ok')
+                if (resultObj.status === 'ok')
                 {
                     msgToShow = SUCCESS_MSG;
                     document.getElementById("alertResult").classList.add('alert-success');
                 }
-                else if (resultObj.status = 'error')
+                else if (resultObj.status === 'error')
                 {
                     msgToShow = ERROR_MSG;
                     document.getElementById("alertResult").classList.add('alert-danger');
@@ -94,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             });
         }
 
+        //Esto se debe realizar para prevenir que el formulario se envíe (comportamiento por defecto del navegador)
         if (e.preventDefault) e.preventDefault();
             return false;
     });

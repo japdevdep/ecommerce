@@ -12,9 +12,13 @@ var getJSONData = function(url){
     return fetch(url)
     .then(response => response.json())
     .then(function(response) {
-        result.status = 'ok';
-        result.details = response;
-        return result;
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }else{
+          result.status = 'ok';
+          result.details = response;
+          return result;
+        }
     }).catch(function(error) {
         result.status = 'error';
         result.details = error;

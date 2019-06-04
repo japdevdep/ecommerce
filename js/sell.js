@@ -7,7 +7,7 @@ let PESO_CURRENCY = "Pesos Uruguayos (UYU)";
 let DOLLAR_SYMBOL = "USD ";
 let PESO_SYMBOL = "UYU ";
 let PERCENTAGE_SYMBOL = '%';
-let URL_PUBLISH_PRODUCT = "https://api.myjson.com/bins/18iaa9vb";
+let URL_PUBLISH_PRODUCT = "https://api.myjson.com/bins/18i9vb";
 let SUCCESS_MSG = "¡Se ha realizado la publicación con éxito! :)";
 let ERROR_MSG = "Ha habido un error :(, verifica qué pasó.";
 
@@ -67,6 +67,14 @@ document.addEventListener("DOMContentLoaded", function(e){
 
         updateTotalCosts();
     });
+
+    //Configuraciones para el elemento que sube archivos
+    var dzoptions = {
+        url:"/",
+        autoQueue: false
+    };
+    var myDropzone = new Dropzone("div#file-upload", dzoptions);    
+
 
     //Se obtiene el formulario de publicación de producto
     var sellForm = document.getElementById("sell-info");

@@ -1,27 +1,21 @@
-document.addEventListener("DOMContentLoaded", function(e){
-    var dzoptions = {
-        url:"/",
-        autoQueue: false
-      };
-
-    var myDropzone = new Dropzone("div#file-upload", dzoptions);
-});
-
 var getJSONData = function(url){
     var result = {};
     return fetch(url)
-    .then(response => response.json())
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }else{
+        throw Error(response.statusText);
+      }
+    })
     .then(function(response) {
-        if (!response.ok) {
-          throw Error(response.statusText);
-        }else{
           result.status = 'ok';
-          result.details = response;
+          result.data = response;
           return result;
-        }
-    }).catch(function(error) {
+    })
+    .catch(function(error) {
         result.status = 'error';
-        result.details = error;
+        result.data = error;
         return result;
     });
   }

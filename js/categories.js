@@ -1,4 +1,3 @@
-const CATEGORIES_URL = "https://api.myjson.com/bins/tpyd7";
 const ORDER_ASC_BY_NAME = "AZ";
 const ORDER_DESC_BY_NAME = "ZA";
 const ORDER_BY_PROD_COUNT = "Cant.";
@@ -36,7 +35,6 @@ function sortCategories(criteria, array){
 function showCategoriesList(array){
 
     let htmlContentToAppend = "";
-
     for(let i = 0; i < array.length; i++){
         let category = array[i];
 
@@ -44,7 +42,7 @@ function showCategoriesList(array){
         <a href="category-info.html" class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
-                    <img src="` + category.imgSrc + `" alt="Auto azul" class="img-thumbnail">
+                    <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">

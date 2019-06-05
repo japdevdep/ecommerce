@@ -25,27 +25,24 @@
     </nav>
     <main role="main" class="pb-5">
         <div class="text-center p-4">
-            <h2>Categorías</h2>
-            <p class="lead">Verás aquí todas las categorías del sitio.</p>
+            <h2>Productos</h2>
+            <p class="lead">Verás aquí todos los productos de la categoría <strong>Autos.</strong></p>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col text-right">
                     <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                        <label class="btn btn-light active" id="sortAsc" >
-                            <input type="radio" name="options" autocomplete="off" checked>A-Z
+                        <label class="btn btn-light active" id="sortCostAsc" >
+                            <input type="radio" name="options" autocomplete="off" checked>$->$$
                         </label>
-                        <label class="btn btn-light" id="sortDesc" >
-                            <input type="radio" name="options" autocomplete="off">Z-A
-                        </label>
-                        <label class="btn btn-light" id="sortByCount" >
-                            <input type="radio" name="options" autocomplete="off">Cant.
+                        <label class="btn btn-light" id="sortCountSoldDesc" >
+                            <input type="radio" name="options" autocomplete="off">RR->R
                         </label>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="list-group" id="cat-list-container">
+                <div class="list-group" id="product-list-container">
                 </div>
             </div>
         </div>
@@ -63,6 +60,6 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
-    <script src="js/categories.js"></script>
+    <script src="js/products.js"></script>
   </body>
 </html>

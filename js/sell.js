@@ -7,7 +7,6 @@ let PESO_CURRENCY = "Pesos Uruguayos (UYU)";
 let DOLLAR_SYMBOL = "USD ";
 let PESO_SYMBOL = "UYU ";
 let PERCENTAGE_SYMBOL = '%';
-let URL_PUBLISH_PRODUCT = "https://api.myjson.com/bins/18i9vb";
 let SUCCESS_MSG = "¡Se ha realizado la publicación con éxito! :)";
 let ERROR_MSG = "Ha habido un error :(, verifica qué pasó.";
 
@@ -121,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             //Aquí ingresa si pasó los controles, irá a enviar
             //la solicitud para crear la publicación.
 
-            getJSONData(URL_PUBLISH_PRODUCT).then(function(resultObj){
+            getJSONData(PUBLISH_PRODUCT_URL).then(function(resultObj){
                 let msgToShowHTML = document.getElementById("resultSpan");
                 let msgToShow = "";
     

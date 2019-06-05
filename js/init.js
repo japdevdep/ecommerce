@@ -1,3 +1,8 @@
+const CATEGORIES_URL = "https://api.myjson.com/bins/tpyd7";
+const PUBLISH_PRODUCT_URL = "https://api.myjson.com/bins/18i9vb";
+const CATEGORY_INFO_URL = "https://api.myjson.com/bins/19vnq3";
+const PRODUCTS_URL = "https://api.myjson.com/bins/eijkr";
+
 var getJSONData = function(url){
     var result = {};
     showSpinner();

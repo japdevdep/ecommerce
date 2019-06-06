@@ -121,3 +121,12 @@ footer p {
   z-index: 1021;
   display: none;
 }
+
+a h3, a p{
+  color: black;
+
+}
+
+a h3:hover{
+  text-decoration: none !important;
+}

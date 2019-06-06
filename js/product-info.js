@@ -1,8 +1,6 @@
-function sortProducts(criteria, array){
+var category = {};
 
-}
-
-function showProductsList(array){
+function showImagesGallery(array){
 
 }
 

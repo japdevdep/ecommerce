@@ -122,11 +122,8 @@ footer p {
   display: none;
 }
 
-a h3, a p{
-  color: black;
-
-}
-
-a h3:hover{
-  text-decoration: none !important;
+a.custom-card,
+a.custom-card:hover {
+  color: inherit;
+  text-decoration: inherit;
 }

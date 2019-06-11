@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function(e){
                 //de lo contrario, devolverá mensaje de error.
                 if (resultObj.status === 'ok')
                 {
-                    msgToShow = SUCCESS_MSG;
+                    msgToShow = resultObj.data.msg;
                     document.getElementById("alertResult").classList.add('alert-success');
                 }
                 else if (resultObj.status === 'error')

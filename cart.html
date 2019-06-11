@@ -35,8 +35,9 @@
         <div class="container d-flex flex-column flex-md-row justify-content-between">
             <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
             <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+            <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
             <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-            <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+            <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito<span class="ml-1 badge badge-danger badge-pill" id="cartBadge">2</span></a>
         </div>
     </nav>
       <div class="container">
@@ -52,127 +53,99 @@
                     <th scope="col"></th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Costo</th>
-                    <th scope="col">Moneda</th>
                     <th scope="col">Cantidad</th>
+                    <th scope="col">Subtotal</th>
                   </tr>
                 </thead>
                 <tbody id="articlesWrapper">
                 </tbody>
               </table>
-            <form class="needs-validation" id="sell-info">
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="productName">Nombre</label>
-                  <input type="text" class="form-control" id="productName" placeholder="" value="" >
-                  <div class="invalid-feedback">
-                    Ingresa un nombre
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-8 order-md-1">
-                    <label for="zip">Imágenes</label>
-                    <div class="needsclick dz-clickable" id="file-upload">
-                      <div class="dz-message needsclick">
-                        Arrastra tus fotos aquí<br>
-                      </div>
-                    </div>
-                </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-12 mb-3">
-                      <label for="productDescription">Descripción</label>
-                      <textarea class="form-control" id="productDescription" rows="3"></textarea>
-                  </div>
-                </div>
-              <div class="row">
-                <div class="col-md-3 mb-3">
-                  <label for="zip">Costo</label>
-                  <input type="number" class="form-control" id="productCostInput" placeholder="" required="" value="0" min="0">
-                  <div class="invalid-feedback">
-                    El costo debe ser mayor que 0.
-                  </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label for="state">Moneda</label>
-                    <select class="custom-select d-block w-100" id="productCurrency" required="">
-                      <option selected>Pesos Uruguayos (UYU)</option>
-                      <option>Dólares (USD)</option>
-                    </select>
-                    <div class="invalid-feedback">
-                      Ingresa una categoría válida.
-                    </div>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-7 mb-3">
-                  <label for="state">Categoría</label>
-                  <select class="custom-select d-block w-100" id="productCategory">
-                    <option value="">Elija la categoría...</option>
-                    <option>Autos</option>
-                    <option>Juguetes</option>
-                    <option>Muebles</option>
-                    <option>Herramientas</option>
-                    <option>Computadoras</option>
-                    <option>Vestimenta</option>
-                  </select>
-                  <div class="invalid-feedback">
-                    Por favor ingresa una categoría válida.
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-3 mb-3">
-                    <label for="productCountInput">Cantidad en stock</label>
-                    <input type="number" class="form-control" id="productCountInput" placeholder="" required="" value="1" min="0">
-                    <div class="invalid-feedback">
-                      La cantidad es requerida.
-                    </div>
-                  </div>
-                </div>
+            <form class="needs-validation" id="buyForm">
               <hr class="mb-4">
-              <h5 class="mb-3">Tipo de publicación</h5>
+              <h4 class="mb-3">Tipo de envío</h4>
               <div class="d-block my-3">
                 <div class="custom-control custom-radio">
-                  <input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
-                  <label class="custom-control-label" for="goldradio">Gold (13%)</label>
+                  <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
+                  <label class="custom-control-label" for="premiumradio">Premium 2 a 5 días (15%)</label>
                 </div>
                 <div class="custom-control custom-radio">
-                  <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
-                  <label class="custom-control-label" for="premiumradio">Premium (7%)</label>
+                  <input id="expressradio" name="publicationType" type="radio" class="custom-control-input" required="">
+                  <label class="custom-control-label" for="expressradio">Express 5 a 8 días (7%)</label>
                 </div>
                 <div class="custom-control custom-radio">
                   <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
-                  <label class="custom-control-label" for="standardradio">Estándar (3%)</label>
+                  <label class="custom-control-label" for="standardradio">Standard 12 a 15 días (5%)</label>
                 </div>
-                <div class="row">
-                  <button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal">Ver condiciones</button>
+              </div>
+
+              <h4 class="mb-3">Dirección de envío</h4>
+              <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="shippingStreet">Calle</label>
+                    <input type="text" class="form-control" id="shippingStreet" placeholder="" value="" >
+                    <div class="invalid-feedback">
+                      Ingresa una calle
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                      <label for="shippingStreetNumber">Número</label>
+                      <input type="number" class="form-control" id="shippingStreetNumber" placeholder="" value="" >
+                      <div class="invalid-feedback">
+                        Ingresa un número
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="shippingCornerStreet">Esquina</label>
+                    <input type="text" class="form-control" id="shippingCornerStreet" placeholder="" value="" >
+                    <div class="invalid-feedback">
+                      Ingresa una esquina
+                    </div>
+                  </div>
+              </div>
+              <hr class="mb-4">
+              <div class="row">
+                <div class="col">
+                  <h4 class="mb-3">Costos</h4>
+                  <ul class="list-group mb-3">
+                      <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                          <h6 class="my-0">Subtotal</h6>
+                          <small class="text-muted">Costo unitario del producto por cantidad</small>
+                        </div>
+                        <span class="text-muted" id="subtotalText">-</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                          <h6 class="my-0">Costo de envío</h6>
+                          <small class="text-muted">Según el tipo de envío</small>
+                        </div>
+                        <span class="text-muted" id="shippingText">-</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between">
+                        <span>Total ($)</span>
+                        <strong id="totalCostText">-</strong>
+                      </li>
+                    </ul>
                 </div>
               </div>
               <hr class="mb-4">
-              <h4 class="mb-3">Costos</h4>
-              <ul class="list-group mb-3">
-                  <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                      <h6 class="my-0">Precio</h6>
-                      <small class="text-muted">Unitario del producto</small>
+              <div class="row">
+                <div class="col">
+                  <h4 class="mb-3">Forma de pago</h4>
+                  <div>
+                    <span class="label" id="paymentType">No ha seleccionado</span>
+                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#contidionsModal">Seleccionar</button>
+                  </div>
+                  <div class="invalid-feedback" id="paymentTypeFeedback">
+                      Debe seleccionar una forma de pago
                     </div>
-                    <span class="text-muted" id="productCostText">-</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                      <h6 class="my-0">P0rcentaje</h6>
-                      <small class="text-muted">Según el tipo de publicación</small>
-                    </div>
-                    <span class="text-muted" id="comissionText">-</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between">
-                    <span>Total ($)</span>
-                    <strong id="totalCostText">-</strong>
-                  </li>
-                </ul>
-              <hr class="mb-4">
-              <button class="btn btn-primary btn-lg" type="submit">Vender</button>
+                </div>
+              </div>
+              <div class="row">
+                  <button class="btn btn-primary btn-lg my-5" type="submit">Finalizar compra</button>
+              </div>
             </form>
           </div>
         </div>
@@ -194,7 +167,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Condiciones de publicación</h5>
+              <h5 class="modal-title">Forma de pago</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -202,19 +175,52 @@
             <div class="modal-body">
               <div class="container">
                   <div class="row">
-                      <h5 class="text-warning">Gold (13%)</h5>
-                      <p class="muted text-justify">Tu producto se verá de forma promocionada en portada, además de las condiciones de Premium y Estándar.</p>
+                    <div class="custom-control custom-radio">
+                      <input id="creditCardPaymentRadio" name="paymentType" type="radio" class="custom-control-input">
+                      <label class="custom-control-label" for="creditCardPaymentRadio">Tarjeta de crédito</label>
+                    </div>
                   </div>
                   <hr>
                   <div class="row">
-                      <h5 class="text-primary">Stándar (7%)</h5>
-                      <p class="muted text-justify">Se mostrará el producto en los primeros lugares de resultados de búsqueda, así cómo cuando se ingrese a la categoría que pertenezca.</p>
+                    <div class="col-md-6 mb-3">
+                      <label for="shippingStreet">Número de tarjeta</label>
+                      <input type="text" class="form-control" id="creditCardNumber" placeholder="" value="" >
+                      <div class="invalid-feedback">
+                        Ingresa un número de tarjeta
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label for="shippingStreetNumber">Código de seg.</label>
+                      <input type="number" class="form-control" id="creditCardSecurityCode" placeholder="" value="" >
+                      <div class="invalid-feedback">
+                        Ingresa el código de seguridad
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="dueDate">Vencimiento (MM/AA)</label>
+                        <input type="text" class="form-control" id="dueDate" placeholder="" value="" >
+                        <div class="invalid-feedback">
+                          Ingresa la fecha de vencimiento
+                        </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="custom-control custom-radio">
+                      <input id="bankingRadio" name="paymentType" type="radio" class="custom-control-input">
+                      <label class="custom-control-label" for="bankingRadio">Transferencia bancaria</label>
+                    </div>
                   </div>
                   <hr>
                   <div class="row">
-                      <h5 class="text-secondary">Estándar (3%)</h5>
-                      <p class="muted text-justify">El producto se listará en la categoría correspondiente, así como en los resultados de búsquedas que coincidan con las palabras claves en el nombre.</p>
-                  </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="bankAccountNumber">Número de cuenta</label>
+                      <input type="text" class="form-control" id="bankAccountNumber" placeholder="" value="" >
+                      <div class="invalid-feedback">
+                        Ingresa un número de cuenta
+                      </div>
+                    </div>
               </div>
             </div>
             <div class="modal-footer">

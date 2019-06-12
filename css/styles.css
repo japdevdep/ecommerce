@@ -65,7 +65,7 @@ footer p {
   background: white;
 }
 
-.notification{
+.alert{
   position: fixed;
   top:80px;
   width: 50%;

@@ -25,15 +25,26 @@
       </div>
     </nav>
     <main role="main" class="pb-5">
-        <div class="container mt-5">
-            <div class="alert alert-danger" role="alert">
-                <h4 class="alert-heading">¡A trabajar! :)</h4>
-                <p>Esta sección corresponde a: 1era. Entrega (Fecha: 25/08/2019) -> Punto 2.</p>
-                <hr>
-                <p class="mb-0">Fijate en la letra qué debes hacer <a target="_blank" href="Letra.pdf">aquí</a>.</p>
+        <div class="text-center p-4">
+            <h2>Productos</h2>
+            <p class="lead">Verás aquí todos los productos de la categoría <strong>Autos.</strong></p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col text-right">
+                    <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+                        <label class="btn btn-light active" id="sortCostAsc" >
+                            <input type="radio" name="options" autocomplete="off" checked>$->$$
+                        </label>
+                        <label class="btn btn-light" id="sortCountSoldDesc" >
+                            <input type="radio" name="options" autocomplete="off">RR->R
+                        </label>
+                    </div>
+                </div>
             </div>
             <div class="row">
-                <a type="button" class="btn btn-light btn-lg btn-block" href="product-info.html">Ver un producto</a>
+                <div class="list-group" id="product-list-container">
+                </div>
             </div>
         </div>
     </main>
@@ -42,7 +53,7 @@
         <p class="float-right">
           <a href="#">Volver arriba</a>
         </p>
-        <p>Este sitio forma parte de Desarrollo Web - JAP</p>
+        <p>Este sitio forma parte de Programación Aplicada - JAP</p>
         <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
       </div>
     </footer>

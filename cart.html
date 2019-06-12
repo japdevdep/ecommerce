@@ -40,116 +40,16 @@
             <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito<span class="ml-1 badge badge-danger badge-pill" id="cartBadge">2</span></a>
         </div>
     </nav>
-      <div class="container">
-        <div class="text-center p-4">
-          <h2>Carrito de compras</h2>
-        </div>
-        <div class="row justify-content-md-center">
-          <div class="col-md-8 order-md-1">
-            <h4 class="mb-3">Artículos a comprar</h4>
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Costo</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Subtotal</th>
-                  </tr>
-                </thead>
-                <tbody id="articlesWrapper">
-                </tbody>
-              </table>
-            <form class="needs-validation" id="buyForm">
-              <hr class="mb-4">
-              <h4 class="mb-3">Tipo de envío</h4>
-              <div class="d-block my-3">
-                <div class="custom-control custom-radio">
-                  <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
-                  <label class="custom-control-label" for="premiumradio">Premium 2 a 5 días (15%)</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input id="expressradio" name="publicationType" type="radio" class="custom-control-input" required="">
-                  <label class="custom-control-label" for="expressradio">Express 5 a 8 días (7%)</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
-                  <label class="custom-control-label" for="standardradio">Standard 12 a 15 días (5%)</label>
-                </div>
-              </div>
-
-              <h4 class="mb-3">Dirección de envío</h4>
-              <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="shippingStreet">Calle</label>
-                    <input type="text" class="form-control" id="shippingStreet" placeholder="" value="" >
-                    <div class="invalid-feedback">
-                      Ingresa una calle
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                      <label for="shippingStreetNumber">Número</label>
-                      <input type="number" class="form-control" id="shippingStreetNumber" placeholder="" value="" >
-                      <div class="invalid-feedback">
-                        Ingresa un número
-                      </div>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="shippingCornerStreet">Esquina</label>
-                    <input type="text" class="form-control" id="shippingCornerStreet" placeholder="" value="" >
-                    <div class="invalid-feedback">
-                      Ingresa una esquina
-                    </div>
-                  </div>
-              </div>
-              <hr class="mb-4">
-              <div class="row">
-                <div class="col">
-                  <h4 class="mb-3">Costos</h4>
-                  <ul class="list-group mb-3">
-                      <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                          <h6 class="my-0">Subtotal</h6>
-                          <small class="text-muted">Costo unitario del producto por cantidad</small>
-                        </div>
-                        <span class="text-muted" id="subtotalText">-</span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                          <h6 class="my-0">Costo de envío</h6>
-                          <small class="text-muted">Según el tipo de envío</small>
-                        </div>
-                        <span class="text-muted" id="shippingText">-</span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between">
-                        <span>Total ($)</span>
-                        <strong id="totalCostText">-</strong>
-                      </li>
-                    </ul>
-                </div>
-              </div>
-              <hr class="mb-4">
-              <div class="row">
-                <div class="col">
-                  <h4 class="mb-3">Forma de pago</h4>
-                  <div>
-                    <span class="label" id="paymentType">No ha seleccionado</span>
-                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#contidionsModal">Seleccionar</button>
-                  </div>
-                  <div class="invalid-feedback" id="paymentTypeFeedback">
-                      Debe seleccionar una forma de pago
-                    </div>
-                </div>
-              </div>
-              <div class="row">
-                  <button class="btn btn-primary btn-lg my-5" type="submit">Finalizar compra</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+    <main role="main">
+		<div class="container mt-5">
+			<div class="alert alert-danger" role="alert">
+				<h4 class="alert-heading">¡A trabajar! :)</h4>
+				<p>Esta sección corresponde a: 3era y 4ta. Entrega (Fecha: 20/10/2019 y 24/11/2019)</p>
+				<hr>
+				<p class="mb-0">Fijate en la letra qué debes hacer <a target="_blank" href="Letra.pdf">aquí</a>.</p>
+			</div>
+		</div>
+    </main>
       <footer class="text-muted">
         <div class="container">
             <p>Este sitio forma parte de Programación Aplicada - JAP</p>

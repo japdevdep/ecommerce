@@ -65,14 +65,6 @@ footer p {
   background: white;
 }
 
-.alert{
-  position: fixed;
-  top:80px;
-  width: 50%;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
 .lds-ring {
   display: inline-block;
   position: relative;

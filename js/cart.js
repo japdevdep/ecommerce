@@ -184,16 +184,13 @@ document.addEventListener("DOMContentLoaded", function(e){
                 if (resultObj.status === 'ok')
                 {
                     msgToShow = resultObj.data.msg;
-                    document.getElementById("alertResult").classList.add('alert-success');
                 }
                 else if (resultObj.status === 'error')
                 {
                     msgToShow = ERROR_MSG;
-                    document.getElementById("alertResult").classList.add('alert-danger');
                 }
-    
-                msgToShowHTML.innerHTML = msgToShow;
-                document.getElementById("alertResult").classList.add("show");
+
+                bootbox.alert(msgToShow, null);
             });
         }
 

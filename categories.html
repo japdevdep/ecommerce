@@ -15,13 +15,30 @@
     <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+    <nav class="navbar navbar-dark navbar-expand-lg site-header   sticky-top py-1 bg-dark">
+      <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="categories.html">Categorías</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="products.html">Productos</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="sell.html">Vender</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="cart.html">Mi carrito</a>
+              </li>
+              </ul>
+          </div>
       </div>
     </nav>
     <main role="main" class="pb-5">
@@ -47,10 +64,9 @@
             </div>
               <div class="row justify-content-end">
                 <div class="col-md-6"></div>
-                  <div class="col-md-6 mb-1 container">
+                  <div class="col-md-6 col-sm-12 mb-1 container">
                     <div class="row container p-0 m-0">
                       <div class="col">
-
                         <p class="font-weight-normal text-right my-2">Cant.</p>
                       </div>
                       <div class="col">
@@ -65,7 +81,7 @@
                           <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
                         </div>
                       </div>
-                      </div>
+                    </div>
                   </div>
               </div>
             <div class="row">

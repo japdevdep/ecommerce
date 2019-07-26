@@ -119,3 +119,18 @@ a.custom-card:hover {
   color: inherit;
   text-decoration: inherit;
 }
+
+.navbar-dark .navbar-nav .nav-link{
+  color: white;
+}
+
+.navbar-nav{
+  width:100%;
+}
+
+@media (min-width : 992px){
+  .navbar-nav .nav-item{
+    width: 20%;
+    text-align: center;
+  }
+}

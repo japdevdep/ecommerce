@@ -25,7 +25,7 @@ function hidePaymentTypeNotSelected(){
 
 }
 
-function showArticles(articles){
+function showProducts(products){
 
 }
 

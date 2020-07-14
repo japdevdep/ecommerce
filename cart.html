@@ -1,149 +1,69 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <title>eMercado - Todo lo que busques está aquí</title>
+<html lang="en">
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
+    }
+  </style>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
+</head>
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/dropzone.css" rel="stylesheet">
-  </head>
-  <body>
-      <nav class="navbar navbar-dark navbar-expand-lg site-header   sticky-top py-1 bg-dark">
-          <div class="container">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                  <li class="nav-item">
-                      <a class="nav-link" href="index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="categories.html">Categorías</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="products.html">Productos</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="sell.html">Vender</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="cart.html">Mi carrito</a>
-                  </li>
-                  </ul>
-              </div>
-          </div>
-        </nav>
-    <main role="main">
-		<div class="container mt-5">
-			<div class="alert alert-danger" role="alert">
-				<h4 class="alert-heading">¡A trabajar! :)</h4>
-				<p>Esta sección corresponde a: 3era y 4ta. Entrega (Fecha: 20/10/2019 y 24/11/2019)</p>
-				<hr>
-				<p class="mb-0">Fijate en la letra qué debes hacer <a target="_blank" href="Letra.pdf">aquí</a>.</p>
-			</div>
-		</div>
-    </main>
-      <footer class="text-muted">
-        <div class="container">
-            <p>Este sitio forma parte de Programación Aplicada - JAP</p>
-            <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-        </div>
-      </footer>
-      <div class="modal fade" tabindex="-1" role="dialog" id="contidionsModal">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Forma de pago</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="container">
-                  <div class="row">
-                    <div class="custom-control custom-radio">
-                      <input id="creditCardPaymentRadio" name="paymentType" type="radio" class="custom-control-input">
-                      <label class="custom-control-label" for="creditCardPaymentRadio">Tarjeta de crédito</label>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-md-6 mb-3">
-                      <label for="shippingStreet">Número de tarjeta</label>
-                      <input type="text" class="form-control" id="creditCardNumber" placeholder="" value="" >
-                      <div class="invalid-feedback">
-                        Ingresa un número de tarjeta
-                      </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label for="shippingStreetNumber">Código de seg.</label>
-                      <input type="number" class="form-control" id="creditCardSecurityCode" placeholder="" value="" >
-                      <div class="invalid-feedback">
-                        Ingresa el código de seguridad
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <label for="dueDate">Vencimiento (MM/AA)</label>
-                        <input type="text" class="form-control" id="dueDate" placeholder="" value="" >
-                        <div class="invalid-feedback">
-                          Ingresa la fecha de vencimiento
-                        </div>
-                      </div>
-                  </div>
-                  <div class="row">
-                    <div class="custom-control custom-radio">
-                      <input id="bankingRadio" name="paymentType" type="radio" class="custom-control-input">
-                      <label class="custom-control-label" for="bankingRadio">Transferencia bancaria</label>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-md-6 mb-3">
-                      <label for="bankAccountNumber">Número de cuenta</label>
-                      <input type="text" class="form-control" id="bankAccountNumber" placeholder="" value="" >
-                      <div class="invalid-feedback">
-                        Ingresa un número de cuenta
-                      </div>
-                    </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
-      <script src="js/vendor/jquery-3.4.1.min.js"></script>
-      <script src="js/vendor/bootstrap.bundle.min.js"></script>
-      <script src="js/vendor/bootbox.min.js"></script>
-      <script src="js/init.js"></script>
-      <script src="js/cart.js"></script>
-    </body>
+<body>
+  <nav class="site-header sticky-top py-1 bg-dark">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+    </div>
+  </nav>
+  <div class="container p-5">
+    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
+      <h4 class="alert-heading">¡A trabajar! :)</h4>
+      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
+      <hr>
+      <p class="mb-0">Fijate en la letra qué debes hacer <a target="_blank" href="Letra.pdf">aquí</a>.</p>
+    </div>
+  </div>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/dropzone.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+
 </html>

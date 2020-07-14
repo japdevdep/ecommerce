@@ -4,7 +4,6 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <title>eMercado - Todo lo que busques está aquí</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
@@ -31,32 +30,15 @@
     <link href="css/dropzone.css" rel="stylesheet">
   </head>
   <body>
-      <nav class="navbar navbar-dark navbar-expand-lg site-header   sticky-top py-1 bg-dark">
-          <div class="container">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                  <li class="nav-item">
-                      <a class="nav-link" href="index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="categories.html">Categorías</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="products.html">Productos</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="sell.html">Vender</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="cart.html">Mi carrito</a>
-                  </li>
-                  </ul>
-              </div>
-          </div>
-        </nav>
+    <nav class="site-header sticky-top py-1 bg-dark">
+        <div class="container d-flex flex-column flex-md-row justify-content-between">
+            <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+            <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+            <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+            <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+            <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        </div>
+    </nav>
       <div class="container">
         <div class="text-center p-4">
           <h2>Vender</h2>
@@ -185,10 +167,16 @@
       </div>
       <footer class="text-muted">
         <div class="container">
-            <p>Este sitio forma parte de Programación Aplicada - JAP</p>
+            <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
             <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
         </div>
       </footer>
+      <div class="alert fade" role="alert" id="alertResult">
+          <span id="resultSpan"></span>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
 
       <div class="modal fade" tabindex="-1" role="dialog" id="contidionsModal">
         <div class="modal-dialog" role="document">
@@ -224,10 +212,9 @@
         </div>
       </div>
       <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
-      <script src="js/vendor/jquery-3.4.1.min.js"></script>
-      <script src="js/vendor/bootstrap.bundle.min.js"></script>
-      <script src="js/vendor/dropzone.js"></script>
-      <script src="js/vendor/bootbox.min.js"></script>
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/dropzone.js"></script>
       <script src="js/init.js"></script>
       <script src="js/sell.js"></script>
     </body>

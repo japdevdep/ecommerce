@@ -4,15 +4,33 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
 </head>
 
 <body>
@@ -28,20 +46,23 @@
   <div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
+      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
       <hr>
       <p class="mb-0">Fijate en la letra qué debes hacer <a target="_blank" href="Letra.pdf">aquí</a>.</p>
     </div>
   </div>
-  <footer class="text-muted">
+  <footer class="text-muted bg-light">
     <div class="container">
-      <p class="float-right">
-        <a href="#">Volver arriba</a>
-      </p>
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
+  <div class="alert fade alert-success" role="alert" id="alertResult">
+    <span id="resultSpan"></span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -52,8 +73,9 @@
   </div>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/product-info.js"></script>
+  <script src="js/my-profile.js"></script>
 </body>
 
 </html>

@@ -59,10 +59,26 @@ footer p {
   transition: ease-in-out color .15s;
 }
 
+.light-text {
+  color: white;
+}
+
+.site-header .dropdown-menu a {
+  color: black;
+}
+
 .dropzone{
   border: 2px dashed #0087F7;
   border-radius: 5px;
   background: white;
+}
+
+.alert{
+  position: fixed;
+  top:80px;
+  width: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .lds-ring {
@@ -120,17 +136,6 @@ a.custom-card:hover {
   text-decoration: inherit;
 }
 
-.navbar-dark .navbar-nav .nav-link{
-  color: white;
-}
-
-.navbar-nav{
-  width:100%;
-}
-
-@media (min-width : 992px){
-  .navbar-nav .nav-item{
-    width: 20%;
-    text-align: center;
-  }
+.checked {
+  color: orange;
 }
